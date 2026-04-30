@@ -51,6 +51,7 @@ mod modal;
 mod network;
 mod notebooks;
 mod notification;
+mod oss_server_override;
 mod palette;
 mod persistence;
 mod platform;
@@ -601,6 +602,7 @@ pub fn run() -> Result<()> {
             }
         }
     }
+    oss_server_override::apply_oss_server_root_override();
 
     if let Some(command) = args.command() {
         #[cfg(windows)]
